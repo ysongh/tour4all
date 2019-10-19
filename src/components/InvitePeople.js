@@ -19,8 +19,21 @@ class InvitePeople extends Component{
                 cruise_id: "53233"
             }
         ],
-        showModal: false
+        showModal: false,
     };
+
+    onSubmitAddPeople(name, phone, cruise_id){
+        const newData = this.state.data;
+
+        newData.push({
+            name: "Joe",
+            phone: "444-444-4444",
+            cruise_id: "83794"
+        });
+
+        this.setState({ data: newData, showModal: false  });
+        
+    }
 
     onCloseModal(){
         this.setState({ showModal: false });
@@ -35,6 +48,7 @@ class InvitePeople extends Component{
             invitePeople__Label,
             invitePeople__plusBtn,
             invitePeople__label,
+            invitePeople__btn,
             margin } = styles;
 
         return(
@@ -77,9 +91,15 @@ class InvitePeople extends Component{
                                 )}} />
                     </View>
                 </View>
+                <Button 
+                    buttonStyle={invitePeople__btn}
+                    textStyle={invitePeople__Label}
+                    value="Continue" 
+                    onPress={() => Actions.selectTrip()}/>
                 <AddPeople
                     visible={this.state.showModal}
-                    onCancel={this.onCloseModal.bind(this)} />
+                    onCancel={this.onCloseModal.bind(this)}
+                    onAdd={this.onSubmitAddPeople.bind(this)} />
             </View>
         );
     };
@@ -105,11 +125,12 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     invitePeople__btn:{
-        width: "100%",
+        width: 300,
+        alignSelf: "center",
         backgroundColor: "#000000",
         borderRadius: 5,
         padding: 10,
-        marginTop: 10
+        marginTop: 30
     },
     invitePeople__plusBtn:{
         alignSelf: "center",

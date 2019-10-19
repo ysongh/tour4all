@@ -39,7 +39,7 @@ class AddPeople extends Component{
                             buttonStyle={addPeople__btn}
                             value="Add"
                             textStyle={addPeople__label}
-                             />
+                            onPress={() => this.props.onAdd(this.state.name, this.state.phone, this.state.cruise_id)} />
                         <Button
                             buttonStyle={addPeople__btn}
                             value="Close"
