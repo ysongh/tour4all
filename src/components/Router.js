@@ -26,10 +26,9 @@ const RouterArea = () => {
                 </Scene>
                 <Scene key="selectTripUser">
                     <Scene component={SelectTripUser} title="Select Trip User" />
+                    <Scene key="tripDetails" component={TripDetails} title="Trip Details" />
                 </Scene>
-                <Scene key="tripDetails">
-                    <Scene component={TripDetails} title="Trip Details" />
-                </Scene>
+                
             </Scene>
         </Router>
     )
