@@ -34,11 +34,13 @@ class SelectTrip extends Component{
                     <Button
                         buttonStyle={login__btn}
                         value="New York City"
-                        textStyle={login__Label} />
+                        textStyle={login__Label}
+                        onPress={() => Actions.tripDetails()} />
                     <Button
                         buttonStyle={login__btn}
                         value="Washington DC"
-                        textStyle={login__Label} />
+                        textStyle={login__Label}
+                        onPress={() => Actions.tripDetails()} />
                 </View>
 
                  <View style={login__btnGroup}>
@@ -46,19 +48,20 @@ class SelectTrip extends Component{
                     <Button
                         buttonStyle={login__btn}
                         value="Japon"
-                        textStyle={login__Label} />
+                        textStyle={login__Label}
+                        onPress={() => Actions.tripDetails()} />
                     <Button
                         buttonStyle={login__btn}
                         value="Spain"
-                        textStyle={login__Label} />
+                        textStyle={login__Label}
+                        onPress={() => Actions.tripDetails()} />
                 </View>
 
                 <View style={login__btnGroup}>
                     <Button
                         buttonStyle={search__btn}
                         value="Add Trip +"
-                        textStyle={search__Label}
-                        onPress={() => Actions.tripDetails()} />
+                        textStyle={search__Label} />
                 </View>
 
 

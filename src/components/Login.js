@@ -10,12 +10,14 @@ class Login extends Component{
     state = {
         leaderSelected: false,
         userSelected: false,
-        showInput: false
+        showInput: false,
+        showButton: false
     };
 
     inputForLeader(){
         this.setState({
             showInput: true,
+            showButton: false,
             leaderSelected: true,
             userSelected: false
         });
@@ -24,10 +26,11 @@ class Login extends Component{
     inputForUser(){
         this.setState({
             showInput: false,
+            showButton: true,
             leaderSelected: false,
             userSelected: true
         });
-        Actions.selectTripUser();
+        
     };
     
     render(){
@@ -57,6 +60,14 @@ class Login extends Component{
                         onEndEditing = {() => Actions.selectTrip()} />
                      : null }
 
+                {this.state.showButton ? 
+                    <Button
+                        buttonStyle={login__fbButton}
+                        textStyle={login__Label}
+                        value="Continue as User"
+                        onPress={() => Actions.selectTripUser()} />
+                    : null }
+
                 <View style={login__btnGroup}>
                     <Button
                         buttonStyle={this.state.leaderSelected ? login__btnSelected : login__btn}
@@ -85,6 +96,7 @@ const styles = StyleSheet.create({
         marginBottom: 50
     },
     login__fbButton:{
+        width: 220,
         alignSelf: "center",
         backgroundColor: "#000000",
         borderRadius: 5,
