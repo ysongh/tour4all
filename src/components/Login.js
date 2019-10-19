@@ -27,6 +27,7 @@ class Login extends Component{
             leaderSelected: false,
             userSelected: true
         });
+        Actions.selectTripUser();
     };
     
     render(){

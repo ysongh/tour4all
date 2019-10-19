@@ -3,8 +3,10 @@ import { Scene, Router } from 'react-native-router-flux';
 
 import Login from './Login';
 import SelectTrip from './SelectTrip';
+import SelectTripUser from './SelectTripUser';
 import CreateTrip from './CreateTrip';
 import NearYou from './NearYou';
+import TripDetails from './TripDetails';
 
 const RouterArea = () => {
     return(
@@ -21,6 +23,12 @@ const RouterArea = () => {
                 </Scene>
                 <Scene key="nearYou">
                     <Scene component={NearYou} title="Near You" />
+                </Scene>
+                <Scene key="selectTripUser">
+                    <Scene component={SelectTripUser} title="Select Trip User" />
+                </Scene>
+                <Scene key="tripDetails">
+                    <Scene component={TripDetails} title="Trip Details" />
                 </Scene>
             </Scene>
         </Router>
