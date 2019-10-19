@@ -10,6 +10,7 @@ class TripDetails extends Component{
 
     render(){
         const { 
+            tripDetails__footer,
             container,
             item1,
             item2, 
@@ -21,6 +22,7 @@ class TripDetails extends Component{
             search__Label,
             chat_view,
             save__fbButton,
+            save__btn,
 
 
             login__fbButton,
@@ -60,7 +62,24 @@ class TripDetails extends Component{
                         textStyle={login__Label}
                         value="Send" />
                     </View>
-                    
+                </View>
+                <View style={tripDetails__footer}>
+                    <Button
+                        buttonStyle={save__btn}
+                        textStyle={login__Label}
+                        value="Itinenary" />
+                    <Button
+                        buttonStyle={save__btn}
+                        textStyle={login__Label}
+                        value="Memones" />
+                    <Button
+                        buttonStyle={save__btn}
+                        textStyle={login__Label}
+                        value="Profile" />
+                    <Button
+                        buttonStyle={save__btn}
+                        textStyle={login__Label}
+                        value="CheckList" />
                 </View>
             </View>
         );
@@ -81,7 +100,7 @@ const styles = StyleSheet.create({
         
     },
     chat_view:{
-        height:365,
+        height: 325,
         backgroundColor:"white"
     },
     g_container: {
@@ -149,7 +168,18 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10
     },
-
+    save__btn:{
+        alignSelf: "center",
+        padding: 10,
+        borderRadius: 4,
+        borderWidth: 1,
+        borderColor: '#d6d7da',
+    },
+    tripDetails__footer:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        backgroundColor: "#000000"
+    }
 
 
 
