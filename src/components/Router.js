@@ -7,6 +7,9 @@ import SelectTripUser from './SelectTripUser';
 import CreateTrip from './CreateTrip';
 import NearYou from './NearYou';
 import TripDetails from './TripDetails';
+import Itenerary from '/Itenerary';
+import Memories from '/Memories';
+import Profile from '/Profile';
 
 const RouterArea = () => {
     return(
@@ -27,6 +30,9 @@ const RouterArea = () => {
                 <Scene key="selectTripUser">
                     <Scene component={SelectTripUser} title="Select Trip User" />
                     <Scene key="tripDetails" component={TripDetails} title="Trip Details" />
+                    <Scene key="itenerary" component={Itenerary} title="Itenerary" />
+                    <Scene key="memories" component={Memories} title="Memories" />
+                    <Scene key="profile" component={Profile} title="Profile" />
                 </Scene>
                 
             </Scene>
