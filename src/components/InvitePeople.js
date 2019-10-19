@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
+import AddPeople from './AddPeople';
 import Button from '../components/common/Button';
 
 class InvitePeople extends Component{
@@ -17,8 +18,14 @@ class InvitePeople extends Component{
                 phone: "222-111-2221",
                 cruise_id: "53233"
             }
-        ]
+        ],
+        showModal: false
     };
+
+    onCloseModal(){
+        this.setState({ showModal: false });
+    }
+
     render(){
         const { 
             invitePeople,
@@ -46,7 +53,8 @@ class InvitePeople extends Component{
                         <Button
                             buttonStyle={invitePeople__plusBtn}
                             textStyle={invitePeople__Label}
-                            value="+" />
+                            value="+"
+                            onPress={() => this.setState({ showModal: true })} />
                     </View>
                     <View style={invitePeople__group}>
                         <Text style={invitePeople__label}>Phone</Text>
@@ -69,6 +77,9 @@ class InvitePeople extends Component{
                                 )}} />
                     </View>
                 </View>
+                <AddPeople
+                    visible={this.state.showModal}
+                    onCancel={this.onCloseModal.bind(this)} />
             </View>
         );
     };
