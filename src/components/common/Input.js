@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 
-const Input = ({ label, inputStyle, value, onChangeText, placeholder, secureTextEntry, keyboardType }) => {
+const Input = ({ label, inputStyle, value, onChangeText, placeholder, secureTextEntry, keyboardType, onEndEditing }) => {
     const { inputArea, input__label, input__field } = styles;
 
     return(
@@ -15,6 +15,7 @@ const Input = ({ label, inputStyle, value, onChangeText, placeholder, secureText
                 onChangeText={onChangeText}
                 keyboardType={keyboardType}
                 clearButtonMode="while-editing"
+                onEndEditing={onEndEditing}
                 style={inputStyle || input__field} />
         </View>
     )

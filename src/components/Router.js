@@ -12,7 +12,7 @@ const RouterArea = () => {
                     <Scene component={Login} title="Login" />
                 </Scene>
                 <Scene key="selectTrip">
-                    <Scene component={SelectTrip} title="Select Trip" initial/>
+                    <Scene component={SelectTrip} title="Select Trip" />
                 </Scene>
             </Scene>
         </Router>

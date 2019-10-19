@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 import Button from '../components/common/Button';
 import Input from '../components/common/Input';
@@ -45,9 +46,12 @@ class Login extends Component{
                     textStyle={login__Label}
                     value="Continue With FB" />
 
-                {this.state.showInput ? <Input 
-                    placeholder={this.state.leaderSelected ? "ID" : ""}
-                    inputStyle={login__input}/> : null }
+                {this.state.showInput ? 
+                    <Input 
+                        placeholder={this.state.leaderSelected ? "ID" : ""}
+                        inputStyle={login__input}
+                        onEndEditing = {() => Actions.selectTrip()} />
+                     : null }
 
                 <View style={login__btnGroup}>
                     <Button
