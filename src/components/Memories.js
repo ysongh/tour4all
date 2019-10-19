@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         backgroundColor:"white"
     },
     g_container: {
-        marginTop: 90,
     },
     container: {
         flexDirection: "row",
