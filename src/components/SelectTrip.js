@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {Actions} from 'react-native-router-flux';
 
 import Button from '../components/common/Button';
 
@@ -38,7 +39,8 @@ class SelectTrip extends Component{
                 <Button
                     buttonStyle={selectTrip__plusBtn}
                     textStyle={selectTrip__Label}
-                    value="+" />
+                    value="+"
+                    onPress = {() => Actions.createTrip()} />
             </View>
         );
     };
