@@ -4,6 +4,7 @@ import { Scene, Router } from 'react-native-router-flux';
 import Login from './Login';
 import SelectTrip from './SelectTrip';
 import CreateTrip from './CreateTrip';
+import NearYou from './NearYou';
 
 const RouterArea = () => {
     return(
@@ -17,6 +18,9 @@ const RouterArea = () => {
                 </Scene>
                 <Scene key="createTrip">
                     <Scene component={CreateTrip} title="Create Trip" />
+                </Scene>
+                <Scene key="nearYou">
+                    <Scene component={NearYou} title="Near You" />
                 </Scene>
             </Scene>
         </Router>
