@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 import Button from '../components/common/Button';
 import Input from '../components/common/Input';
+import Logo from '../../src/components/img/Logo.jpg';
 
 class Login extends Component{
     state = {
@@ -31,6 +32,7 @@ class Login extends Component{
     render(){
         const { 
             login,
+            login__image,
             login__fbButton,
             login__Label,
             login__LabelSelected,
@@ -41,6 +43,7 @@ class Login extends Component{
 
         return(
             <View style={login}>
+                <Image source={Logo} style={login__image}/>
                 <Button
                     buttonStyle={login__fbButton}
                     textStyle={login__Label}
@@ -72,7 +75,13 @@ class Login extends Component{
 
 const styles = StyleSheet.create({
     login:{
-        marginTop: 200,
+        marginTop: 50,
+    },
+    login__image:{
+        alignSelf: "center",
+        width: 200,
+        height: 200,
+        marginBottom: 50
     },
     login__fbButton:{
         alignSelf: "center",
