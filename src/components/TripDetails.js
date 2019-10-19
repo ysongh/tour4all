@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Image, ScrollView, TextInput} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import Button from './common/Button';
 import Input from './common/Input';
@@ -67,19 +68,23 @@ class TripDetails extends Component{
                     <Button
                         buttonStyle={save__btn}
                         textStyle={login__Label}
-                        value="Itinenary" />
+                        value="Itinenary"
+                        onPress={() => Actions.itenerary()} />
                     <Button
                         buttonStyle={save__btn}
                         textStyle={login__Label}
-                        value="Memones" />
+                        value="Memones"
+                        onPress={() => Actions.memories()} />
                     <Button
                         buttonStyle={save__btn}
                         textStyle={login__Label}
-                        value="Profile" />
+                        value="Profile"
+                        onPress={() => Actions.profile()} />
                     <Button
                         buttonStyle={save__btn}
                         textStyle={login__Label}
-                        value="CheckList" />
+                        value="CheckList"
+                        onPress={() => Actions.nearYou()} />
                 </View>
             </View>
         );

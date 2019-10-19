@@ -51,7 +51,8 @@ class Login extends Component{
                 <Button
                     buttonStyle={login__fbButton}
                     textStyle={login__Label}
-                    value="Continue With FB" />
+                    value="Continue With FB"
+                    onPress={() => Actions.selectTripUser()}/>
 
                 {this.state.showInput ? 
                     <Input 
@@ -60,13 +61,13 @@ class Login extends Component{
                         onEndEditing = {() => Actions.selectTrip()} />
                      : null }
 
-                {this.state.showButton ? 
+                {/* {this.state.showButton ? 
                     <Button
                         buttonStyle={login__fbButton}
                         textStyle={login__Label}
                         value="Continue as User"
                         onPress={() => Actions.selectTripUser()} />
-                    : null }
+                    : null } */}
 
                 <View style={login__btnGroup}>
                     <Button
