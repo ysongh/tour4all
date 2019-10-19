@@ -1,10 +1,24 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 
 import Button from '../components/common/Button';
 
 class InvitePeople extends Component{
+    state = {
+        data: [
+            {
+                name: "Bob",
+                phone: "111-111-1111",
+                cruise_id: "12345"
+            },
+            {
+                name: "Benny",
+                phone: "222-111-2221",
+                cruise_id: "53233"
+            }
+        ]
+    };
     render(){
         const { 
             invitePeople,
@@ -22,7 +36,13 @@ class InvitePeople extends Component{
                 <View style={invitePeople__container}>
                     <View style={invitePeople__group}>
                         <Text style={invitePeople__label}>Name</Text>
-                        <Text style={margin}>Bob</Text>
+                        <FlatList 
+                            keyExtractor={item => item.cruise_id}
+                            data={this.state.data}
+                            renderItem={({ item }) => {
+                                return (
+                                    <Text style={margin}>{item.name}</Text>
+                                )}} />
                         <Button
                             buttonStyle={invitePeople__plusBtn}
                             textStyle={invitePeople__Label}
@@ -30,11 +50,23 @@ class InvitePeople extends Component{
                     </View>
                     <View style={invitePeople__group}>
                         <Text style={invitePeople__label}>Phone</Text>
-                        <Text style={margin}>111-111-1111</Text>
+                        <FlatList 
+                            keyExtractor={item => item.cruise_id}
+                            data={this.state.data}
+                            renderItem={({ item }) => {
+                                return (
+                                    <Text style={margin}>{item.phone}</Text>
+                                )}} />
                     </View>
                     <View style={invitePeople__group}>
                         <Text style={invitePeople__label}>Cruise_ID</Text>
-                        <Text style={margin}>12345</Text>
+                        <FlatList 
+                            keyExtractor={item => item.cruise_id}
+                            data={this.state.data}
+                            renderItem={({ item }) => {
+                                return (
+                                    <Text style={margin}>{item.cruise_id}</Text>
+                                )}} />
                     </View>
                 </View>
             </View>

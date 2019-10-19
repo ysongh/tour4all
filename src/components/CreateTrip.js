@@ -1,10 +1,22 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 import InvitePeople from '../components/InvitePeople';
 import Button from '../components/common/Button';
 
 class CreateTrip extends Component{
+    state = {
+        data: [
+            {
+                city: "New York",
+                time: "10:00am"
+            },
+            {
+                city: "New Jersey",
+                time: "12:00pm"
+            }
+        ]
+    };
     render(){
         const { 
             createTrip,
@@ -33,13 +45,23 @@ class CreateTrip extends Component{
                     </View>
                     <View>
                         <Text style={createTrip__subTitle}>Destation</Text>
-                        <Text style={margin}>New York</Text>
-                        <Text style={margin}>New Jersey</Text>
+                        <FlatList 
+                            keyExtractor={item => item.city}
+                            data={this.state.data}
+                            renderItem={({ item }) => {
+                                return (
+                                    <Text style={margin}>{item.city}</Text>
+                                )}} />
                     </View>
                     <View>
                         <Text style={createTrip__subTitle}>Time</Text>
-                        <Text style={margin}>10:00am</Text>
-                        <Text style={margin}>12:00pm</Text>
+                        <FlatList 
+                            keyExtractor={item => item.city}
+                            data={this.state.data}
+                            renderItem={({ item }) => {
+                                return (
+                                    <Text style={margin}>{item.time}</Text>
+                                )}} />
                     </View>
                 </View>
                 
