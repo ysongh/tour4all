@@ -31,7 +31,7 @@ class CreateTrip extends Component{
 
         return(
             <View style={createTrip}>
-                <Text style={createTrip__title}>Invite</Text>
+                <Text style={createTrip__title}>Schedule</Text>
                 <View style={createTrip__container}>
                     <View style={createTrip__group1}>
                         <Text style={createTrip__subTitle}>Start</Text>
